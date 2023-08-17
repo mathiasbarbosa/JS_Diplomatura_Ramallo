@@ -55,13 +55,3 @@ let numero = 0
 //     numero++
 // }
 
-// while (numero < 10) {
-    
-//     // if (numero === 5) {
-//     //     continue
-//     // }else{
-//     //     console.log(numero);
-//     // }
-//     // // numero = numero + 1
-//     // numero++
-// }
