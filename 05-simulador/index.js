@@ -34,8 +34,13 @@ function login (){
     do{
         username = prompt('ingrese su nombre de usuario').toLowerCase().trim();
         password = prompt('ingrese su contraseña')
-        if(username === user.name && password === user.password) {
+        // TODO find user in users array
+        let user_find = users.find( (user) => user.name === username )
+        console.log(user_find);
+
+        if(user_find != undefined && user_find.password === password) {
             alert(`Bienvenido ${username}`)
+            menu()
             break 
         }else{
             console.error('credenciales incorrectas')
@@ -65,6 +70,27 @@ function registerUser() {
         }
         users.push(new_user)
         console.log(users);
+        return true;
+    }
+
+    return false
+}
+
+const menu = () => {
+ // TODO FUNCTION MENU 
+    opciones_menu = prompt('Seleccione la operacion que desea realizar: \n 1-consultar cuenta \n 2- transferir dinero \n 3- depositar en la cuenta  \n 4- salir')
+    while (opciones_menu != '4') {
+        switch (opciones_menu) {
+            case '1':
+                consultarCuenta()
+                break;
+            case '2':
+                transferirDinero()
+                break;
+            case '2':
+                depositarDinero()
+                break;
+        }
     }
 }
 
@@ -74,23 +100,13 @@ let opciones_menu = prompt('Seleccione la operacion que desea realizar: \n 1-Ini
 switch (opciones_menu) {
     case "1":
         login()
-        opciones_menu = prompt('Seleccione la operacion que desea realizar: \n 1-consultar cuenta \n 2- transferir dinero \n 3- depositar en la cuenta  \n 4- salir')
-        while (opciones_menu != '4') {
-            switch (opciones_menu) {
-                case '1':
-                    consultarCuenta()
-                    break;
-                case '2':
-                    transferirDinero()
-                    break;
-                case '2':
-                    depositarDinero()
-                    break;
-            }
-        }
     break;
     case "2":
-        registerUser()
+        // TODO: IF TRUE login() => FUNCTION MENU
+        if(registerUser()) {
+            login()
+        }
+
     break;
 
     default:
