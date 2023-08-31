@@ -1,0 +1,9 @@
+.anchoImg{
+    width: 25%;
+}
+
+.card{
+    border: 1px solid ;
+    width:50%;
+    padding: 1rem;
+}
