@@ -1,0 +1,154 @@
+:root{
+    --color-1: rgb(240, 248, 255);
+    --color-2: rgb(42, 152, 248);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+}
+
+/* main{
+    min-width: 1500px;
+} */
+
+h1{
+    text-align: center;
+}
+
+#artistas{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    box-shadow: 5px 5px 5px #22222254;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card > img {
+    width: 100%;
+    margin-top: auto;
+}
+
+#generoMusical{
+    margin: auto;
+    width: 50%;
+    padding: 5rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.item_genero{
+    width: 200px;
+    height: 66px;
+    padding: 1.5rem 1.5rem;
+    background-color: rgba(240, 248, 255, 0.758);
+    box-shadow: 5px 5px 5px rgba(232, 239, 246, 0.685) ;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+}
+
+.item_genero:hover{
+    border: 2px solid var(--color-2);
+
+}
+
+#nav_lower_player{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color:var(--color-1);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem;
+}
+
+#close_nav_player{
+    cursor: pointer;
+}
+
+#container_data_artista{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav_lower_icons{
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_lower_icons > div{
+    display: flex;
+    gap: 1rem;
+}
+
+.nav_lower_icons > div > i{
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.nav_lower_icons > div > i:hover{
+    color: var(--color-2);
+
+}
+
+
+/** ASIDE */
+aside{
+    max-width: 444px;
+    width: 100%;
+    background-color: var(--color-1);
+    box-shadow: 10px 5px 5px rgba(232, 239, 246, 0.685) inset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+aside > div{
+    width: 80%;
+    box-shadow: 5px 5px 5px #22222254;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+aside > div > img{
+    width: 100%;
+}
+
+#nav_aside_artist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hidden{
+    display: none !important;
+}
+

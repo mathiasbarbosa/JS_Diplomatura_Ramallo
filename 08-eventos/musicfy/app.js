@@ -132,7 +132,6 @@ const artistas = [
 ];
 
 
-
 const generosMusicales = [
     { id: 1, nombre: "Rock" },
     { id: 2, nombre: "Pop" },
@@ -142,43 +141,16 @@ const generosMusicales = [
     // Agrega más categorías según sea necesario
     ];
 
-    const $ = document;
+const $ = document;
 
-    const containerArtistas = document.getElementById('artistas')
-    const containerGenero = document.getElementById('generoMusical')
-    const nav_lower_player = document.querySelector('#nav_lower_player')
-    const close_nav_player = document.querySelector('#close_nav_player')
-    const container_data_artista = document.querySelector('#container_data_artista')
-
+const containerArtistas = document.getElementById('artistas')
+const containerGenero = document.getElementById('generoMusical')
+const nav_lower_player = document.querySelector('#nav_lower_player')
+const nav_aside = document.querySelector('#nav_aside')
+const close_nav_player = document.querySelector('#close_nav_player')
+const container_data_artista = document.querySelector('#container_data_artista')
+const close_nav_aside = document.querySelector('#close_nav_aside')
 // * 1- VISTA GENERAL
-
-// // estructura card HTML
-// let div = $.createElement('div')
-// let h2 = $.createElement('h2')
-// let h3 = $.createElement('h3')
-// let small = $.createElement('small')
-// let p = $.createElement('p')
-// let p_ultimoLanzamiento = $.createElement('p')
-// let img = $.createElement('img')
-
-// // contenido card
-// let nombre = $.createTextNode(artistas[1].nombre)
-// let banda = $.createTextNode(artistas[1].banda)
-// let genero = $.createTextNode(artistas[1].genero)
-// let album = $.createTextNode(artistas[1].album)
-// let ultimoLanzamiento = $.createTextNode(artistas[1].ultimoLanzamiento)
-
-// // referenciar (atar) el contenido con su correcpondiente etiqueta html
-// h2.appendChild(nombre)
-// h3.appendChild(banda)
-// small.appendChild(genero)
-// p.appendChild(album)
-// p_ultimoLanzamiento.appendChild(ultimoLanzamiento)
-
-// img.setAttribute('src', artistas[1].img)
-
-// div.append(h2, h3, small, p, p_ultimoLanzamiento, img)
-// document.body.appendChild(div)
 
 
 function createCard(artista){
@@ -257,36 +229,49 @@ const showNav = () => {
         console.log(nombreArtista);
         if (evento.target.parentNode.classList[0] === 'card') { // ! Mejora en la busqueda y seleccion de la card con parentNode
             nav_lower_player.classList.remove('hidden')
+            nav_aside.classList.remove('hidden')
             let find = findArtistabyNombre(nombreArtista.textContent)
             // console.log(find);
             container_data_artista.innerHTML = `
-                <img src=${find.imagen} alt=${find.nombre} style='width: 100px'>
-                <h3>${find.nombre}</h3>
-                <h4>Album: ${find.album}</h4>
+                <img src=${find.imagen} alt=${find.nombre} style='width: 50px'>
+                <div>
+                    <h3>${find.nombre}</h3>
+                    <h4>Album: ${find.album}</h4>
+                </div>
             `
+            showAsideNav(find)
         }
     })
 }
 
- // let cards = document.querySelectorAll('.card')
-    // console.log(cards);
-
-    // cards.forEach((card) => {
-    //     card.addEventListener('click', () => {
-    //         nav_lower_player.classList.remove('hiden')
-    //     })
-    // })
-
-
-
+// ! function close nav player
+const closeNav = (button) => {
+    button.addEventListener('click', () => {
+        nav_lower_player.classList.add('hidden')
+        nav_aside.classList.add('hidden')
+    })
+}
+// ! function mostrar aside nav
+const showAsideNav = (data) => {
+    const nav_aside_song = $.querySelector('#nav_aside_song')
+    const nav_aside_artist = $.querySelector('#nav_aside_artist')
+    nav_aside_song.innerHTML = `<img src=${data.imagen} alt=${data.nombre}>
+                                <h2>${data.album}</h2>
+                                <h4>${data.genero}</h4>
+                                <i class="bi bi-heart"></i>
+                                `
+    nav_aside_artist.innerHTML = `
+                                <img src=${data.img_descripcion} alt=${data.nombre}>
+                                <p>${data.descripcion}</p>
+                                `
+}
 
 
 window.addEventListener('DOMContentLoaded', () => {
     renderedCategorys()
     renderedCards(artistas)
     showNav()
-    close_nav_player.addEventListener('click', () => {
-        nav_lower_player.classList.add('hidden')
-    })
+    closeNav(close_nav_player)
+    closeNav(close_nav_aside)
     filterByCategory()
 })
