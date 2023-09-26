@@ -69,9 +69,9 @@ formulario.addEventListener('submit', (event) => {
       }
       console.log(usuario);
       console.log(JSON.stringify(usuario));
-      localStorage.setItem('usuario',  JSON.stringify(usuario))
       usuarios.push(usuario)
-      // TODO direccionar al login
+      localStorage.setItem('usuario',  JSON.stringify(usuarios))
+      window.location = './login.html'
     }else{
       id('password').style.border = '1px solid red'
       id('password_r').style.border = '1px solid red'
@@ -81,5 +81,6 @@ formulario.addEventListener('submit', (event) => {
     forEachInput(select, validateInputHTML)
     validateTerminos()
   }
+
 
 })

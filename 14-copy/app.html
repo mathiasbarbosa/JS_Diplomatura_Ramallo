@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musicfy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="app.css">
+    <script defer src="./app.js"></script>
+</head>
+<body>
+    <nav id="nav_profile">
+        <h3>Hola</h3>
+        <a href="#" class="item_nav">Home</a>
+        <a href="./pages/favoritos.html" class="item_nav">Bibloteca</a>
+        <a href="" class="item_nav">Perfil</a>
+        <i class="bi bi-lamp-fill" style="cursor: pointer; font-size: 1.5rem;" id="theme_mode"></i>
+        <i class="bi bi-door-open-fill"style="cursor: pointer; font-size: 1.5rem;"></i>
+    </nav>
+    <main>
+        <h1>Musicfy</h1>
+
+        <section id="generoMusical">
+
+        </section>
+
+        <form id="formSearch">
+            <input type="search" placeholder="Buscar artista">
+        </form>
+
+        <section id="artistas">
+
+        </section>
+
+        <div id="nav_lower_player" class="hidden">
+            <div id="container_data_artista">
+            </div>
+
+            <div>
+                <audio src="" controls></audio>
+            </div>
+
+            <div class="nav_lower_icons">
+                <div>
+                    <i class="bi bi-file-play"></i>
+                    <i class="bi bi-file-text"></i>
+                    <i class="bi bi-list-columns"></i>
+                    <i class="bi bi-volume-up"></i>
+                </div>
+                <span id="close_nav_player">❌</span>
+            </div>
+        </div>
+    </main>
+
+    <aside id="nav_aside" class="hidden">
+        <div>
+            <span id="close_nav_aside">❌</span>
+        </div>
+        <div id="nav_aside_song">
+            cancion
+        </div>
+
+        <div id="nav_aside_artist">
+            artista
+        </div>
+    </aside>
+
+</body>
+</html>

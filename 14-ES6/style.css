@@ -1,0 +1,19 @@
+#productos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  /* display: grid; */
+  /* grid-template-columns: minmax(200px, 1fr); */
+}
+
+.card > div > img {
+  width: 100px;
+}
+
+.card{
+  width: 30%;
+  padding: 0.5rem;
+  border: 1px solid ;
+}
