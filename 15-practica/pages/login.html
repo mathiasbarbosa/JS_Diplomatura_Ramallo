@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root{
+    --color-1: rgb(240, 248, 255);
+    --color-2: rgb(42, 152, 248);
+    }
+    body{
+      background-color: var(--color-1);
+    }
+    h1{
+      text-align: center;
+      color: var(--color-2) ;
+    }
+
+    form{
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--color-2);
+      margin: auto;
+      gap: 1rem;
+      padding: 1rem;
+      box-shadow: 5px 5px 5px #22222228;
+    }
+    input{
+      padding: 0.5rem;
+      outline: none;
+      border: none;
+      border-top: 1px solid var(--color-2);
+    }
+    
+    label{
+      color: var(--color-2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    button{
+      width: 30%;
+      margin: auto;
+      padding: 0.5rem;
+      background-color: var(--color-2);
+      border: none;
+      border-radius: 5px;
+    }
+
+    a{
+      margin: auto;
+    }
+
+  </style>
+  <script defer type="module" src="../js/login.js"></script>
+</head>
+<body>
+  <h1>Bienvenid@ 🎧</h1>
+  <form id="form">
+    <label for="email">
+      <input type="email" name="email" id="email" placeholder="Ingresar email">
+    </label>
+    
+    <label for="password">
+      <input type="password" name="password"  id="password" placeholder="Ingresar contraseña">
+    </label>
+    
+    <button>Iniciar</button>
+    <a href="./formRegistro.html">No tenes cuenta? Registrate</a>
+  </form>
+</body>
+</html>
